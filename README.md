@@ -1,6 +1,6 @@
 # chinese.py
 
-Embarassingly simple script for converting a word list (utf8 encoded) into a (utf8-encoded) output file with the Google translate definitions and the pinyin in it.  This is a good starting point for building Chinese word lists.
+Embarassingly simple script for converting a word list (utf8 encoded) into a (utf8-encoded) output file with the Google translate definitions and the pinyin in it.  This is a good starting point for building Chinese word lists.  尽管玩儿!
 
 ## Requirements
 
