@@ -1,13 +1,7 @@
-'''
-Alex Michael
 
-Todo:
-- [ ] Get file length, print progress
-'''
 import os
 import sys
 import time
-
 import argparse
 
 from googletrans import Translator
@@ -18,10 +12,6 @@ def translate(word):
 
 def pronounce(word):
 	return Translator().translate(word,src='zh-cn',dest='zh-cn').pronunciation
-
-def print_chinese(output):
-	output = output.encode('utf8') + os.linesep.encode('utf8')
-	sys.stdout.buffer.write(output)
 
 def check_file_valid(fname):
 	return os.path.exists(fname)
@@ -64,14 +54,16 @@ def main():
 	# write all words to a file
 	with open(outfile, 'w', encoding='utf8') as f:
 		for word in tqdm(words):
-			translation = 'translation'#translate(word)
-			pronunciation = 'pronounciation'#pronounce(word)	
+			translation = translate(word)
+			pronunciation = pronounce(word)	
 
 			row = word+','+pronunciation+','+translation
 			if tag is not None:
 				row += tag
 			row+=os.linesep
 			f.write(row)
+
+			time.sleep(3)
 		
 
 if __name__ == '__main__':
