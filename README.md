@@ -5,12 +5,16 @@ Embarassingly simple script for converting a word list (utf8 encoded) into a (ut
 ## Requirements
 
 * [Google Trans](https://pypi.org/project/googletrans/)
+* [tqdm/tqdm](https://github.com/tqdm/tqdm)
 
 ## Usage
 
 ```cmd
-python3 chinese.py words.txt > output.csv
+python3 chinese.py test.txt -o out.csv
 ```
+
+`chinese.py` takes one positional argument: the input filename
+* `-o/--output` flag specifies a file to output
 
 __Input file:__
 ```
